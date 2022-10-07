@@ -1,8 +1,9 @@
 import React from 'react';
-import Form from './Form';
-import Dropdown from './Dropdown';
-import Secciones from './Secciones';
-import Carrito from './Carrito';
+import Form from '../Form';
+import Dropdown from '../Dropdown';
+import Secciones from '../Secciones';
+import Carrito from '../Carrito';
+
 
 const Navbar = () => {
     return (

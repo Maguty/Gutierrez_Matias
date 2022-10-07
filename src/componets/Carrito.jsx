@@ -1,8 +1,12 @@
+import {Link} from 'react-router-dom'
 import React from 'react';
+
 
 const Carrito = () => {
     return (
-            <i className="bi bi-cart2"></i>
+        <Link to="/VerCarrito">
+           <button><i className="bi bi-cart2"></i></button>
+           </Link>
 
     );   
 }
