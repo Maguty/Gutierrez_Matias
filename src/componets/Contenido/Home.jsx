@@ -1,11 +1,11 @@
 import React,{useState,useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import { consultarBase } from '../../utils/funcionesUtiles';
 
 const Home = () => {
     const [productos, setProductos] = useState([]);
     useEffect(() => {
-        const consultarBase =async () =>{
-        const response = await fetch ('./json/productos.json')
-        const productos = await response.json()
+        consultarBase ('./json/productos.json').then(productos=>{
         const cardProducto = productos.map(producto => 
             <div className="card cardProducto" key={producto.id}>
                 <img src={"./img/" + producto.img} className="card-img-top" alt={producto.nombre} />
@@ -15,13 +15,12 @@ const Home = () => {
                         <p className="card-text">Marca: {producto.marca}</p>
                         <p className="card-text">Precio: {producto.precio}</p>
                         <p className="card-text">Stock: {producto.stock}</p>
-                        <button className='btn btn-dark'>Ver Producto</button>
+                        <button className='btn btn-dark'><Link className='nav-link'to={"/producto/" + producto.id}>Ver Producto</Link></button>
                 </div>
             </div>)
     
-        return cardProducto
-    }
-        consultarBase().then(producto => setProductos(producto))
+        setProductos(cardProducto)
+        })
        
     }, []);
     return (

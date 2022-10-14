@@ -1,11 +1,12 @@
 import React from 'react';
-import Form from '../Form';
-import Dropdown from '../Dropdown';
-import Secciones from '../Secciones';
-import Carrito from '../Carrito';
+import Form from '../layout/Form';
+import Dropdown from '../layout/Dropdown';
+import Secciones from '../layout/Secciones';
+import Carrito from '../layout/Carrito';
 
 
 const Navbar = () => {
+  const listDrowpdon = ["Electro", "Celulares", "Televisores"]
     return (
         <>
            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -17,7 +18,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav me-auto">
               <Secciones/>
-              <Dropdown/>
+              <Dropdown Lista={listDrowpdon}/>
               <a href="">*Ver Carrito*</a><Carrito/>
             </ul>
             <Form busqueda = "Buscar Producto"/>

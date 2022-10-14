@@ -1,14 +1,12 @@
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import React from 'react';
-import './App.css'
-import Index from './componets/ItemListContainer';
-import Contador from './componets/Contador';
-import Navbar from './componets/Contenido/Navbar';
-import Home from './componets/Contenido/Home';
-import Producto from './componets/Contenido/Producto'
-import DetalleProdcuto from './componets/Contenido/DetalleProducto'
-import Contacto from './componets/Contenido/Contacto'
-import VerCarrito from './componets/Contenido/VerCarrito';
+import '../styles/App.css'
+import Navbar from './Contenido/Navbar'
+import Home from './Contenido/Home';
+import Producto from './Contenido/Producto'
+import Contacto from './Contenido/Contacto'
+import VerCarrito from './Contenido/VerCarrito';
+import Categoria from './Contenido/Categoria';
 const App = () => {
     return (
         <>
@@ -17,6 +15,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/Producto/:id" element={<Producto/>} />
+              <Route path="/categoria/:id" element={<Categoria/>} />
               <Route path="/VerCarrito" element={<VerCarrito/>} />
               <Route path="/Contacto" element={<Contacto/>} />
               
